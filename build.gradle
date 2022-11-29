@@ -3,12 +3,12 @@ buildscript {
         jcenter()
         mavenCentral()
         maven {
-            name = 'Forge'
-            url = 'http://files.minecraftforge.net/maven'
+              name 'OpenMods Third Party'
+              url 'https://repo.openmods.info/artifactory/simple/thirdparty'
         }
         maven {
-              name 'OpenMods Third Party'
-              url 'http://repo.openmods.info/artifactory/simple/thirdparty'
+            name = 'Forge'
+            url = 'https://files.minecraftforge.net/maven'
         }
     }
 
@@ -27,20 +27,20 @@ rootProject.allprojects {
         mavenCentral()
         jcenter()
         maven {
-            name 'Forge'
-            url 'http://files.minecraftforge.net/maven'
-        }
-        maven {
             name 'MinecraftS3'
-            url 'http://s3.amazonaws.com/Minecraft.Download/libraries'
+            url 'https://s3.amazonaws.com/Minecraft.Download/libraries'
         }
         maven {
             name "OpenMods"
-            url "http://repo.openmods.info/artifactory/openmods"
+            url "https://repo.openmods.info/artifactory/openmods"
         }
         maven {
             name "OpenMods Extras"
-            url 'http://repo.openmods.info/artifactory/thirdparty'
+            url 'https://repo.openmods.info/artifactory/thirdparty'
+        }
+        maven {
+            name 'Forge'
+            url 'https://files.minecraftforge.net/maven'
         }
     }
 }
