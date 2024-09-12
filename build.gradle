@@ -7,6 +7,10 @@ buildscript {
               url 'https://repo.openmods.info/artifactory/simple/thirdparty'
         }
         maven {
+            name 'Forge Mirror'
+            url 'http://unleveledgaming.org/libraries'
+        }
+        maven {
             name = 'Forge'
             url = 'https://files.minecraftforge.net/maven'
         }
@@ -37,6 +41,10 @@ rootProject.allprojects {
         maven {
             name "OpenMods Extras"
             url 'https://repo.openmods.info/artifactory/thirdparty'
+        }
+        maven {
+            name 'Forge Mirror'
+            url 'http://unleveledgaming.org/libraries'
         }
         maven {
             name 'Forge'

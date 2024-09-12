@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
-import jline.internal.Log;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.BakedQuad;
@@ -19,6 +18,7 @@ import net.minecraftforge.client.model.IModel;
 import net.minecraftforge.client.model.PerspectiveMapWrapper;
 import net.minecraftforge.common.model.IModelState;
 import net.minecraftforge.common.property.IExtendedBlockState;
+import net.minecraftforge.fml.common.FMLLog;
 import openmods.model.BakedModelAdapter;
 import openmods.model.ModelUpdater;
 
@@ -73,10 +73,10 @@ public class EvalExpandModel extends EvalModelBase {
 				blockState = defaultBlock.getDefaultState();
 				if (!(blockState instanceof IExtendedBlockState) ||
 						!((IExtendedBlockState)blockState).getUnlistedNames().contains(EvalModelState.PROPERTY)) {
-					Log.warn("State %s does not contain eval state property", blockState);
+					FMLLog.warning("State {} does not contain eval state property", blockState);
 				}
 			} else {
-				Log.warn("Can't find default block: %s", defaultBlockState.get());
+				FMLLog.warning("Can't find default block: " + defaultBlockState.get());
 			}
 		}
 

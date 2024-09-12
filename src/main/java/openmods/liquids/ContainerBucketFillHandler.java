@@ -2,7 +2,6 @@ package openmods.liquids;
 
 import com.google.common.collect.Lists;
 import java.util.List;
-import jline.internal.Log;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -16,6 +15,7 @@ import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
@@ -35,7 +35,7 @@ public abstract class ContainerBucketFillHandler {
 		if (containedFluid != null) {
 			buckets.add(Pair.of(containedFluid.copy(), filledBucket.copy()));
 		} else {
-			Log.warn("Item %s is not a filled bucket", filledBucket);
+			FMLLog.warning("Item {} is not a filled bucket", filledBucket);
 		}
 		return this;
 	}
